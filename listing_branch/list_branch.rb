@@ -23,7 +23,7 @@ else
   Dir[ "#{ dev_dir }/*"].each do |dir|
     if Dir.exists? "#{ dir }/.git"
       branch = branch_name(dir)
-      branch += '*' unless has_commit?(dir)
+      branch += '*' unless has_uncommitted_files?(dir)
       print green, bold, ">> #{ File.basename(dir).ljust(40) }", branch
       puts
     end
