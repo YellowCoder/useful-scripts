@@ -2,7 +2,7 @@
 
 ####Installation
 
-You just must run:
+Just execute:
 
 ```bash
 bundle install
