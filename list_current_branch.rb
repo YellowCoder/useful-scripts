@@ -5,9 +5,9 @@ include Term::ANSIColor
 
 if ARGV[0].nil?
   print red, bold, ">> You must specify the path argument.\n"
-  print white, bold, "----------------------------------------------\n"
-  print white, bold, "Example: ruby list_current_branchs.rb '~/path'\n"
-  print white, bold, "----------------------------------------------"
+  print white, bold, "---------------------------------------------\n"
+  print white, bold, "Example: ruby list_current_branch.rb '~/path'\n"
+  print white, bold, "---------------------------------------------"
   puts
 else
   dev_dir = File.expand_path("#{ ARGV[0] }", __FILE__)
