@@ -32,7 +32,7 @@ git push origin $CURRENT_BRANCH
 
 - `sudo vim /bin/git-pc`
 - save the file
-- `sudo chmod +x /bin/git-pc
+- `sudo chmod +x /bin/git-pc`
 
 **To execute:**
 
