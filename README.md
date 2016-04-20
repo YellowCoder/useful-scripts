@@ -1,6 +1,6 @@
-##Useful Scripts
+## Useful Scripts
 
-####Installation
+#### Installation
 
 Initially execute:
 
@@ -8,7 +8,7 @@ Initially execute:
 bundle install
 ```
 
-####Scripts
+#### Scripts
 
 - [Git Push Commit](https://github.com/adrianotadao/useful-scripts/tree/master/git_push_commit)
 - [Git Squash](https://github.com/adrianotadao/useful-scripts/tree/master/git_squash)
