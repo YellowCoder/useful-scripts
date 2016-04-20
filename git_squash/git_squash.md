@@ -4,10 +4,11 @@ Sometimes execute the basic git commands is very boring and repetitive so, this 
 
 - get the MERGE_BASE_ID
 - `git reset --soft MERGE_BASE_ID`
-- `git commit -am"YOUR_MESSAGE_COMMIT"`
+- `git add .`
+- `git commit -m "YOUR_MESSAGE_COMMIT"`
 - `git push origin -f YOUR_CURRENT_BRANCH`
 
-Note: It will clear the history of commits. Be careful and not run it if you'll need this historic.
+Warning: This procedures clears the commits history. So do not run it if you'll need this history.
 
 **The Script**
 
@@ -19,13 +20,16 @@ COMMIT_MESSAGE=$1
 FROM_BRANCH=${2-master}
 MERGE_BASE_ID=$(git merge-base HEAD $FROM_BRANCH)
 
-echo -e "$(tput setaf 2)** Executing Status command$(tput sgr0)"
+echo -e "$(tput setaf 2)** Executing reset command$(tput sgr0)"
 git reset --soft $MERGE_BASE_ID
 
-echo -e "$(tput setaf 2)\n** Executing commit command$(tput sgr0)\n"
-git commit -am"$COMMIT_MESSAGE"
+echo -e "$(tput setaf 2)\n** Executing add command$(tput sgr0)\n"
+git add .
 
 echo -e "$(tput setaf 2)\n** Executing commit command$(tput sgr0)\n"
+git commit -m "$COMMIT_MESSAGE"
+
+echo -e "$(tput setaf 2)\n** Executing push command$(tput sgr0)\n"
 git push origin -f $CURRENT_BRANCH
 ```
 
@@ -37,8 +41,10 @@ git push origin -f $CURRENT_BRANCH
 
 **To execute:**
 
-At some git repository run:
+At some git repository, run:
 
 ```bash
-git squash 'Message Commit'
+git squash "Commit Message"
+or
+git-squash "Commit Message"
 ```
